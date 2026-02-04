@@ -20,22 +20,13 @@ A Neovim plugin that provides flexible transparency management for colorschemes,
 
 ### Using [lazy.nvim](https://github.com/folke/lazy.nvim)
 
-```lua
-{
-  "ricardo-rod/colorscheme-transparency.nvim",
-  lazy = false,
-  priority = 1000,
-  opts = {
-    use_persistence = false,
-    default_main = true,
-    default_floats = true,
-  },
-}
-```
-
 ### Using [LazyVim](https://www.lazyvim.org/)
 
-Create a new file `~/.config/nvim/lua/plugins/transparency.lua`:
+Create a new file:
+`touch $HOME/.config/nvim/lua/plugins/transparency.lua`
+
+`nvim $HOME/.config/nvim/lua/plugins/transparency.lua`
+Paste the following content to the file:
 
 ```lua
 return {
