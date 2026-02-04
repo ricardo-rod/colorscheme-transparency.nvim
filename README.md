@@ -18,7 +18,11 @@ A Neovim plugin that provides flexible transparency management for colorschemes,
 
 ## 📦 Installation
 
+<<<<<<< HEAD
 ### Orignal Repo [lazy.nvim](https://github.com/folke/lazy.nvim)
+=======
+### Repository [lazy.nvim](https://github.com/folke/lazy.nvim)
+>>>>>>> 53572a0 (Change Readme bad info about setup)
 
 ### Website [LazyVim](https://www.lazyvim.org/)
 
@@ -39,9 +43,31 @@ return {
 }
 ```
 
-LazyVim will automatically load this file and manage the plugin.
+LazyVim will automatically load this file and manage the plugin but you need to install the plugin first.
 
 > **Note**: If you get an error about the Lua module not being found, ensure the plugin is properly installed in your Neovim plugins directory. You can also use `opts = {...}` instead of `config = function()` once the plugin is installed.
+
+
+
+## 🚀 Quick Start
+
+After adding the plugin to your LazyVim or lazy.nvim config, install it using one of these commands:
+
+### Install the specific plugin
+
+Open Neovim and run:
+
+```vim
+:Lazy install colorscheme-transparency.nvim
+```
+
+### Sync all plugins (recommended)
+
+```vim
+:Lazy sync
+```
+
+This will install, update, and clean up all plugins in your config.
 
 ### Manual Installation
 
