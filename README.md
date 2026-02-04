@@ -33,19 +33,18 @@ A Neovim plugin that provides flexible transparency management for colorschemes,
 }
 ```
 
-### Using [packer.nvim](https://github.com/wbthomson/packer.nvim)
+### Manual Installation
 
-```lua
-use {
-  "ricardo-rod/colorscheme-transparency.nvim",
-  config = function()
-    require("colorscheme-transparency").setup({
-      use_persistence = false,
-      default_main = true,
-      default_floats = true,
-    })
-  end,
-}
+Clone the repository to your Neovim plugins directory:
+
+```bash
+git clone https://github.com/ricardo-rod/colorscheme-transparency.nvim.git ~/.local/share/nvim/site/pack/plugins/start/colorscheme-transparency.nvim
+```
+
+Or if you use a different plugin directory:
+
+```bash
+git clone https://github.com/ricardo-rod/colorscheme-transparency.nvim.git /path/to/your/plugins/colorscheme-transparency.nvim
 ```
 
 ## ⚙️ Configuration
@@ -96,9 +95,8 @@ Compatible with popular Neovim plugins:
 
 ```
 colorscheme-transparency.nvim/
-├── init.lua                              # Entry point
 ├── plugin/
-│   └── colorscheme-transparency.lua     # Plugin loader
+│   └── colorscheme-transparency.lua     # Auto-loaded by Neovim on startup
 ├── lua/colorscheme-transparency/
 │   ├── init.lua                          # Main setup module
 │   ├── config.lua                        # Configuration management
@@ -107,6 +105,12 @@ colorscheme-transparency.nvim/
 ├── LICENSE
 └── .gitignore
 ```
+
+### Directory Explanation
+
+- **`plugin/`**: Auto-loaded by Neovim at startup. Any `.lua` files here are executed automatically without requiring manual `require()` calls. This is where the plugin entry point lives.
+
+- **`lua/`**: Module code that can be required with `require("colorscheme-transparency")`. This directory contains the actual logic separated into modular files for organization and reusability.
 
 ## 🔧 Development
 
