@@ -26,6 +26,8 @@ Create a new file:
 
 `touch $HOME/.config/nvim/lua/plugins/transparency.lua`
 
+Edit the file:
+
 `nvim $HOME/.config/nvim/lua/plugins/transparency.lua`
 
 Paste the following content to the file:
