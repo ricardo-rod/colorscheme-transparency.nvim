@@ -1,3 +1,7 @@
+---@class CST.Config
+---@field use_persistence boolean Save and restore transparency state
+---@field default_main boolean Default transparency for main windows
+---@field default_floats boolean Default transparency for floating windows
 local M = {}
 
 M.options = {
@@ -6,8 +10,9 @@ M.options = {
   default_floats = true,
 }
 
-M.state_path = vim.fn.stdpath("data") .. "/transparent_state"
+M.state_path = vim.fn.stdpath("data") .. "/colorscheme_transparency_state"
 
+---Save transparency state to disk
 function M.save_state()
   if not M.options.use_persistence then return end
   local fd = vim.uv.fs_open(M.state_path, "w", 438)
@@ -20,6 +25,8 @@ function M.save_state()
   end
 end
 
+---Load transparency state from disk
+---@return boolean, boolean main_transparent, floats_transparent
 function M.load_state()
   if not M.options.use_persistence then 
     return M.options.default_main, M.options.default_floats 
